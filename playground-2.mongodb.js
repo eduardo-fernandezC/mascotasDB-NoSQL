@@ -15,7 +15,7 @@ function registrarLog(accion, detalle, estado = "OK") {
     });
 }
 
-// Funcion para registrar una adopción
+// Funcion para registrar una adopcion
 function registrarAdopcion(id_mascota, id_adoptador) {
 
     const mascota = db.mascotas.findOne({ id_mascota });
@@ -30,7 +30,7 @@ function registrarAdopcion(id_mascota, id_adoptador) {
 
     if (yaAdoptada) {
         print("Error: La mascota ya fue adoptada.");
-        registrarLog("registrar_adopcion", `Intento fallido de adopción para mascota ID ${id_mascota}`, "ERROR");
+        registrarLog("registrar_adopcion", `Intento fallido de adopcion para mascota ID ${id_mascota}`, "ERROR");
         return;
     }
 
@@ -46,8 +46,8 @@ function registrarAdopcion(id_mascota, id_adoptador) {
         { $set: { estado: "ADOPTADA" } }
     );
 
-    print("Adopción registrada correctamente.");
-    registrarLog("registrar_adopcion", `Nueva adopción registrada para mascota ID ${id_mascota}`);
+    print("Adopcion registrada correctamente.");
+    registrarLog("registrar_adopcion", `Nueva adopcion registrada para mascota ID ${id_mascota}`);
 }
 
 // Funcion para mostrar todas las adopciones
@@ -173,8 +173,8 @@ function eliminarAdopcion(id_mascota) {
     const adopcion = db.adopciones.findOne({ id_mascota });
 
     if (!adopcion) {
-        print(`No existe adopción registrada para la mascota ID ${id_mascota}.`);
-        registrarLog("eliminar_adopcion", `No se encontró adopción para mascota ID ${id_mascota}`, "ERROR");
+        print(`No existe adopcion registrada para la mascota ID ${id_mascota}.`);
+        registrarLog("eliminar_adopcion", `No se encontro adopcion para mascota ID ${id_mascota}`, "ERROR");
         return;
     }
 
@@ -185,7 +185,7 @@ function eliminarAdopcion(id_mascota) {
         { $set: { estado: "DISPONIBLE" } }
     );
 
-    print(`Adopción de la mascota ID ${id_mascota} eliminada y estado restaurado a DISPONIBLE.`);
+    print(`Adopcion de la mascota ID ${id_mascota} eliminada y estado restaurado a DISPONIBLE.`);
     registrarLog("eliminar_adopcion", `Adopción eliminada y estado restaurado para mascota ID ${id_mascota}`);
 }
 
