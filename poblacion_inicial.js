@@ -116,6 +116,14 @@ db.log_refugio.insertOne({
     estado: "OK"
 });
 
+// Creacion de colecciones
+// use("REFUGIO_DB");
+// db.createCollection("mascotas");
+// db.createCollection("rescates");
+// db.createCollection("adoptantes");
+// db.createCollection("adopciones");
+// db.createCollection("log_refugio");
+
 // Limpiar DB
 // db.mascotas.drop();
 // db.rescates.drop();
